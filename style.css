@@ -1896,17 +1896,27 @@ footer p { /* MANTENIDO */
         padding: 1.5rem 1rem; /* Ajustar padding en móvil */
     }
 
-    .comunidad-carousel {
-        height: 350px; /* Ajustar altura carrusel en móvil */
-    }
+     .comunidad-carousel {
+        height: 350px; /* Mantén la altura ajustada para móvil */
+     }
+
+    /* Estilos compartidos para los botones en móvil (solo tamaño, color, etc.) */
     .comunidad-carousel .swiper-button-prev,
     .comunidad-carousel .swiper-button-next {
-         /* Ocultar flechas si son muy grandes o molestan */
-         /* display: none; */
-         /* O hacerlas más pequeñas */
-          --swiper-navigation-size: 24px;
-          left: 10px;
-          right: 10px;
+         --swiper-navigation-size: 24px; /* Mantén el tamaño ajustado */
+         /* Elimina left y right de aquí */
+    }
+
+    /* Posicionamiento específico para el botón PREV en móvil */
+    .comunidad-carousel .swiper-button-prev {
+        left: 10px;  /* Posiciona el botón PREV desde la IZQUIERDA */
+        right: auto; /* Asegúrate de que no esté posicionado también desde la derecha */
+    }
+
+    /* Posicionamiento específico para el botón NEXT en móvil */
+    .comunidad-carousel .swiper-button-next {
+        right: 10px; /* Posiciona el botón NEXT desde la DERECHA */
+        left: auto;  /* Asegúrate de que no esté posicionado también desde la izquierda */
     }
 }
 @media (max-width: 480px) {
