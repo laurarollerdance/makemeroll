@@ -1030,14 +1030,34 @@ header .container {
     /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */ /* Ejemplo de sombra */
 }
 @media (max-width: 768px) {
-    /* ... otras reglas ... */
+    /* ... otras reglas que ya tengas ... */
+
+    /* Ajuste para la imagen en Quien Soy */
     .quien-soy-img {
-        margin-bottom: 1rem;
-        max-width: 300px; /* Este es el tamaño máximo en pantallas pequeñas */
-        margin-left: auto;
-        margin-right: auto;
+        /* La regla original fuera del media query tiene min-width: 450px; */
+        min-width: auto; /* <-- AÑADIDO: Permite que la imagen se encoja */
+        max-width: 100%; /* <-- MODIFICADO/AÑADIDO: Asegura que no sea más ancha que el contenedor */
+        margin-bottom: 1rem; /* Mantienes este margen si lo deseas */
+        margin-left: auto;   /* Mantienes esto para centrarla */
+        margin-right: auto;  /* Mantienes esto para centrarla */
+         /* max-width: 300px; <-- ELIMINA O AJUSTA ESTA LÍNEA.
+            Con max-width: 100% y min-width: auto, la imagen se ajustará
+            al ancho disponible (hasta 100% o el ancho del container),
+            no necesitas un max-width fijo a menos que quieras que sea más pequeña
+            que el contenedor del móvil (ej: si el container tiene padding).
+            Si quieres que en móvil no exceda los 300px AUNQUE el contenedor sea más ancho,
+            mantén max-width: 300px; aquí. Pongamos 100% para que ocupe el máximo posible. */
     }
-    /* ... otras reglas ... */
+
+    /* Asegurarse de que la imagen dentro del contenedor también se ajusta */
+    .quien-soy-img img {
+         width: 100%; /* <-- Asegura que la imagen llena el contenedor .quien-soy-img (que ahora es responsive) */
+         height: auto;  /* <-- Mantiene la proporción */
+         /* object-fit: cover; o contain; <- elige cuál quieres aquí */
+         /* display: block; border-radius: 8px; <- Estos ya están, no necesitas repetirlos */
+    }
+
+    /* ... el resto de reglas de tu media query ... */
 }
 /* Ajustes responsivos específicos para el cuadro de texto si es necesario (MANTENIDO) */
 @media (max-width: 768px) {
@@ -1907,4 +1927,24 @@ footer p { /* MANTENIDO */
      .comunidad-carousel {
         height: 280px; /* Ajustar altura carrusel en móvil pequeño */
     }
+    
+}
+@media (max-width: 768px) {
+    /* ... otras reglas que ya tengas ... */
+
+    /* Ajuste de altura para el carrusel de Shows en móvil */
+    .shows-carousel {
+        height: 400px; /* <-- REDUCE ESTA ALTURA. Prueba con 400px o 350px. */
+                       /*    AJUSTA ESTE VALOR hasta que el área gris sea mínima para TUS FOTOS. */
+                       /* O podrías usar un aspect-ratio menos vertical: aspect-ratio: 4/5; */
+                       /*    (Una relación 4 de ancho por 5 de alto) */
+        width: 300px; /* Esto se hereda o se puede poner aquí */
+    }
+
+     /* No necesitas cambiar .shows-carousel .swiper-slide img si ya tiene
+        width: 100%, height: 100%, object-fit: contain;
+        porque ahora ocupará el 100% de la *nueva*, menor altura del carrusel
+        definida arriba. */
+
+    /* ... el resto de reglas de tu media query ... */
 }
