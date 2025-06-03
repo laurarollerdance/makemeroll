@@ -1,0 +1,1910 @@
+/* --- VARIABLES Y ESTILOS BASE --- */
+:root {
+    --primary-color: #8e3cd1; /* Rosa vibrante (ejemplo) */
+    --secondary-color: #4ecdc4; /* Turquesa (ejemplo) */
+    --accent-color: #f8f8f8; /* Gris claro para secciones alternas */
+    --dark-color: #333;
+    --light-color: #fff;
+    --text-color: #555;
+    --heading-font: 'Arial', sans-serif; /* Cambiar por una fuente con más rollo */
+    --body-font: 'Arial', sans-serif; /* Cambiar por una fuente legible */
+    --transition-speed: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Para el desplazamiento suave de los links # */
+    font-size: 16px; /* Base para REMs */
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.2rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.5rem; color: var(--primary-color); }
+h4 { font-size: 1.2rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 1rem;
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+    background-color: rgba(78, 205, 196, 0.9); /* Usando var(--secondary-color) con opacidad */
+    padding: 1rem 0;
+    position: fixed; /* Fijo en la parte superior */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Estilos para el Logo con Imagen y Texto en Header --- */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--light-color); /* Cambiado a blanco para contraste con fondo turquesa */
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 80px; /* Ajustado a un tamaño más razonable para header */
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+ color: #fff7c7;    /* Hereda estilos */
+}
+
+.logo:hover {
+    color: var(--primary-color); /* Cambia a rosa en hover */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    margin-left: 1.5rem;
+}
+
+.main-nav a {
+    color:  #fff7c7;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-speed), color var(--transition-speed);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary-color); /* Rosa en hover/active */
+    border-bottom-color: var(--primary-color);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--light-color); /* Cambiado a blanco */
+}
+
+/* --- Estilos para el Video de Fondo en Hero --- */
+.hero-video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.9;
+}
+
+/* --- HERO SECTION (MODIFICADO) --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; /* Considera ajustar si el header cambió de altura */
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Overlay Blanco Transparente para Hero Section --- */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(255, 246, 219, 0.548); */ /* Color crema/amarillo claro */
+    background-color: rgba(255, 247, 201, 0.596); /* Blanco con 60% opacidad (opción) */
+    z-index: 1;
+}
+
+/* --- Estilo para el Contenedor del Texto en Hero --- */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Asegura que esté sobre el overlay ::before */
+    /* Quitar fondo, padding, etc. si se usa el overlay ::before */
+    /* background-color: rgba(255, 246, 230, 0.6); */
+    /* padding: 2rem 2.5rem; */
+    /* border-radius: 10px; */
+}
+
+.hero-section h1 {
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Añadir sombra sutil para legibilidad */
+}
+
+.hero-section p {
+     color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Añadir sombra sutil */
+}
+
+/* --- BOTONES --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), border-color var(--transition-speed);
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.btn-primary:hover {
+    background-color: #c73e72; /* Rosa un poco más oscuro (ejemplo) */
+    color: var(--light-color);
+    transform: translateY(-2px);
+}
+
+/* Estilo unificado para botones DENTRO de .hero-section */
+/*.hero-section .btn-primary {
+    border: 2px solid var(--light-color);
+}
+
+.hero-section .btn-primary:hover {
+    border-color: var(--light-color);
+}
+
+/* Ajustar el espaciado entre botones en Hero */
+ .hero-buttons .btn {
+    margin: 0.5rem;
+}
+
+/* Estilos para btn-secondary (usado fuera del hero) */
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color); /* Borde rosa por defecto */
+    color: var(--primary-color); /* Texto rosa */
+}
+.content-section .btn-secondary { /* Ya está definido arriba, esto es redundante */
+    /* color: var(--primary-color); */
+    /* border-color: var(--primary-color); */
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* --- Estilos Personalizados para Botones Específicos (MANTENIDO) --- */
+
+/* Hacer que los botones "Infórmame de Novedades" y "Consultar Horarios y Apuntarme" se vean como botones primarios */
+#workshops-eventos .btn-secondary,
+#calendario .clases-junio-descripcion .btn-secondary {
+    /* Sobrescribir el fondo, color y borde del botón secundario */
+    background-color: var(--primary-color); /* Usar el color primario para el fondo */
+    color: var(--light-color); /* Usar el color claro para el texto */
+    border: none; /* Eliminar el borde */
+    /* Mantener otras propiedades heredadas de .btn como padding, border-radius, etc. */
+    /* Mantener márgenes específicos si se definieron en estos elementos */
+}
+
+/* Aplicar el efecto hover del botón primario a estos botones específicos */
+#workshops-eventos .btn-secondary:hover,
+#calendario .clases-junio-descripcion .btn-secondary:hover {
+    /* Usar el color de fondo hover del botón primario */
+    background-color: #c73e72; /* Color primario un poco más oscuro (de tu .btn-primary:hover) */
+    /* color: var(--light-color); -- Esto ya está definido arriba y no cambia en hover para el primario */
+    /* border-color: #c73e72; -- El botón primario no tiene borde, así que no se necesita cambio de color de borde en hover */
+    transform: translateY(-2px); /* Mantener el efecto de elevación en hover */
+}
+
+/* --- Fin de Estilos Personalizados (MANTENIDO) --- */
+
+
+/* --- Estilos para el Carrusel de Comunidad (Swiper) --- */
+.comunidad-carousel {
+    width: 100%;
+    max-width: 900px; /* Ancho máximo para que no sea enorme en pantallas grandes */
+    height: 500px; /* Altura ejemplo, ajustar según imágenes */
+    margin: 2rem auto 1rem auto; /* Centrado y con márgenes */
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+}
+
+.comunidad-carousel .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #e0e0e0; /* Fondo gris claro mientras carga */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comunidad-carousel .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Estilos para las Flechas de Swiper --- */
+.comunidad-carousel .swiper-button-prev,
+.comunidad-carousel .swiper-button-next {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+    /* Ajustar tamaño si se ven pequeñas/grandes */
+    /* --swiper-navigation-size: 28px; */
+}
+
+.comunidad-carousel .swiper-button-prev:hover,
+.comunidad-carousel .swiper-button-next:hover {
+    color: var(--secondary-color);
+}
+
+/* Ajustar posición si es necesario */
+.comunidad-carousel .swiper-button-prev {
+    left: 15px;
+}
+.comunidad-carousel .swiper-button-next {
+    right: 15px;
+}
+
+/* Estilos para Paginación Swiper (si se activa) */
+/* .comunidad-carousel .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+.comunidad-carousel .swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+} */
+
+
+/* --- SECCIONES DE CONTENIDO --- */
+.content-section {
+    padding: 4rem 0;
+}
+
+/* --- Estilos específicos para la sección Comunidad --- */
+#comunidad {
+    background-image: url('images/fondocomunidad2.jpg'); /* <-- ¡CAMBIA ESTA RUTA A TU IMAGEN! */
+    background-size: cover; /* Hace que la imagen cubra toda la sección */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    position: relative; /* Necesario para posicionar el overlay ::before */
+    /* background-attachment: fixed; */ /* Descomenta para efecto parallax (opcional) */
+
+    /* Añadir un color de fondo de respaldo si la imagen no carga */
+    background-color: #333; /* Ejemplo: un gris oscuro */
+
+    /* Ajustar padding si es necesario para que el contenido no quede pegado a los bordes */
+    padding: 6rem 0; /* Puedes aumentar el padding vertical */
+
+    /* Cambiar color del texto por defecto en esta sección para mejor contraste */
+    color: #ffffff; /* Texto blanco por defecto sobre fondo oscuro/overlay */
+}
+
+/* Overlay semitransparente sobre la imagen de fondo */
+#comunidad::before {
+    content: ''; /* Necesario para que el pseudo-elemento se muestre */
+    position: absolute; /* Posicionado relativo a #comunidad */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* *** ELIGE UN COLOR Y OPACIDAD PARA EL OVERLAY *** */
+    /* Opción 1: Overlay oscuro (bueno para texto blanco) */
+    background-color: rgba(0, 7, 110, 0.637); /* Negro con 60% de opacidad */
+
+    /* Opción 2: Overlay claro (bueno para texto oscuro) */
+    /* background-color: rgba(255, 255, 255, 0.7); */ /* Blanco con 70% de opacidad */
+
+    /* Opción 3: Overlay con color primario o secundario */
+    /* background-color: rgba(228, 77, 135, 0.5); */ /* Rosa primario con 50% opacidad */
+    /* background-color: rgba(78, 205, 196, 0.5); */ /* Turquesa secundario con 50% opacidad */
+
+    z-index: 0; /* Coloca el overlay DETRÁS del contenido del .container */
+}
+
+/* Asegurar que el contenido (texto, carrusel) esté sobre el overlay */
+#comunidad .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajustar colores específicos dentro de la sección si es necesario */
+#comunidad h2 {
+    color: #ffffff; /* Asegurar que el título sea blanco (o el color deseado) */
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Sombra para resaltar */
+}
+
+#comunidad p {
+    color: #f0f0f0; /* Un blanco ligeramente menos intenso para el párrafo */
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra más sutil */
+}
+
+#comunidad strong {
+    color: #ffffff; /* Que el texto en negrita también sea blanco */
+}
+
+/* Ajustar el color de los enlaces dentro del párrafo si es necesario */
+#comunidad p a {
+    color: var(--secondary-color); /* Enlaces en turquesa, por ejemplo */
+    font-weight: bold;
+}
+#comunidad p a:hover {
+    color: var(--primary-color); /* Enlaces en rosa al pasar el ratón */
+}
+
+/* Asegurar que las flechas del carrusel sean visibles sobre el overlay */
+#comunidad .swiper-button-prev,
+#comunidad .swiper-button-next {
+    color: rgba(255, 255, 255, 0.8); /* Flechas blancas semitransparentes */
+}
+#comunidad .swiper-button-prev:hover,
+#comunidad .swiper-button-next:hover {
+    color: var(--secondary-color); /* Turquesa en hover */
+}
+
+/* Si usas paginación, también ajústala */
+/* .comunidad-carousel .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+}
+.comunidad-carousel .swiper-pagination-bullet-active {
+    background: var(--secondary-color);
+} */
+
+/* --- Estilos específicos para la sección Clases (MODIFICADO) --- */
+#clases {
+    background-image: url('images/fondoclases2.jpg'); /* <-- RUTA A TU IMAGEN DE CLASES */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative; /* Necesario para el overlay */
+    /* background-attachment: fixed; */ /* Efecto parallax (opcional) */
+
+    /* Color de fondo de respaldo */
+    background-color: var(--accent-color); /* Usamos el color que tenía como sección alterna */
+
+    /* Ajustar padding si se desea diferente */
+    padding: 4rem 0; /* Mantenemos el padding original */
+
+    /* Cambiar color del texto por defecto en esta sección */
+    color: #ffffff; /* Texto blanco por defecto (ajustar según overlay) */
+}
+
+/* Overlay semitransparente sobre la imagen de fondo de Clases (MANTENIDO) */
+#clases::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* *** ELIGE UN COLOR Y OPACIDAD PARA EL OVERLAY DE CLASES *** */
+    /* Opción 1: Overlay oscuro */
+     background-color: rgba(253, 250, 218, 0.726); /* Negro 55% (ejemplo) */
+
+    /* Opción 2: Overlay con color (ej: turquesa) */
+    /* background-color: rgba(78, 205, 196, 0.6); */ /* Turquesa 60% */
+
+    z-index: 0; /* Detrás del contenido */
+}
+
+/* Asegurar que el contenido de #clases esté sobre el overlay (MANTENIDO) */
+#clases .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajustar colores específicos dentro de la sección #clases (MANTENIDO) */
+#clases h2 {
+    color: var(--primary-color);
+}
+
+/* *** AÑADIDO: Estilo para el nuevo cuadro del texto introductorio y lista en Clases *** */
+#clases .clases-intro-box {
+    background-color: rgba(255, 255, 255, 0.432); /* Fondo blanco transparente como en .clase-info */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+    backdrop-filter: blur(5px); /* Efecto cristal */
+    -webkit-backdrop-filter: blur(5px); /* Para Safari */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 1.5rem; /* Relleno interno */
+    border-radius: 8px; /* Esquinas redondeadas */
+    margin-bottom: 2rem; /* Espacio entre este cuadro y el siguiente contenido (Horarios) */
+    max-width: 800px; /* Opcional: limitar ancho para mejor legibilidad */
+    margin-left: auto; /* Centrar si se limita el ancho */
+    margin-right: auto; /* Centrar si se limita el ancho */
+    /* text-align: center; */ /* Puedes centrar el texto si quieres, pero el original no lo estaba */
+}
+
+/* Ajustar el color del texto dentro de este nuevo cuadro */
+#clases .clases-intro-box p,
+#clases .clases-intro-box li {
+    color: var(--dark-color); /* O un gris oscuro para mejor contraste */
+    text-shadow: none; /* Quitar sombra si el fondo es claro */
+    /* margin-bottom: 1rem; -- Ya definido globalmente para p */
+    /* line-height: 1.6; -- Ya definido globalmente para body */
+}
+
+/* Ajustar el margen inferior del último elemento dentro del cuadro (la lista ul) */
+#clases .clases-intro-box ul {
+    margin-bottom: 0;
+}
+
+/* Ajustar el color de los strong dentro del cuadro */
+#clases .clases-intro-box strong {
+    color: var(--dark-dark); /* O un color oscuro para destacar */
+}
+/* *** FIN AÑADIDO: Estilo para el nuevo cuadro de texto y lista *** */
+
+
+#clases h3 { /* MANTENIDO */
+     color: var(--primary-color); /* Título H3 en rosa para destacar */
+     /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); */
+     margin-top: 2rem; /* Añadir espacio antes de Horarios/Niveles */
+}
+
+/* Estilos para los cuadros de información de clases sobre el fondo (MANTENIDO) */
+#clases .clase-info {
+    background-color: rgba(255, 255, 255, 0.432); /* Fondo blanco MUY transparente */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+    backdrop-filter: blur(5px); /* Efecto cristal (si el navegador lo soporta) */
+    -webkit-backdrop-filter: blur(5px); /* Para Safari */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    /* border-left: none; -- Si usas el borde completo */
+}
+
+#clases .clase-info h4 { /* MANTENIDO */
+    color: var(--secondary-color); /* Título H4 (MARTES/DOMINGOS) en turquesa */
+     text-shadow: none; /* Quitar sombra si el fondo es claro */
+}
+
+#clases .clase-info p { /* MANTENIDO */
+    color: #000000; /* Texto dentro del cuadro en blanco */
+    font-size: 1rem; /* Asegurar tamaño legible */
+}
+#clases .clase-info em { /* Texto en cursiva (descripción nivel) (MANTENIDO) */
+     color: #000000; /* Un gris claro */
+}
+
+#clases .clase-info a { /* Enlaces "Ver Mapa" y "Calendario" (MANTENIDO) */
+    color: var(--primary-color); /* Rosa para enlaces */
+    font-weight: bold;
+}
+#clases .clase-info a:hover { /* MANTENIDO */
+    color: var(--primary-color); /* Turquesa en hover */
+}
+
+/* Ajustar botón "Quiero Apuntarme" (MANTENIDO) */
+#clases .btn-primary {
+    /* Mantiene su estilo por defecto, pero podrías ajustarlo si quieres */
+     /* background-color: var(--secondary-color); */ /* Cambiar a turquesa */
+     /* border: 2px solid var(--light-color); */   /* Añadir borde */
+     margin-top: 2rem; /* Más espacio antes del botón */
+}
+#clases .btn-primary:hover { /* MANTENIDO */
+      /* background-color: var(--primary-color); */ /* Rosa en hover */
+}
+
+/* Ajustar enlace a Instagram (MANTENIDO) */
+#clases .container > p:last-of-type a { /* Selecciona el último párrafo que contiene el enlace a Insta */
+     color: var(--primary-color);
+     font-weight: bold;
+}
+#clases .container > p:last-of-type a:hover { /* MANTENIDO */
+     color: #c73e72;
+}
+.section-accent { /* MANTENIDO */
+    background-color: var(--accent-color);
+}
+
+/* --- Estilos específicos para la sección Workshops y Eventos (MANTENIDO) --- */
+#workshops-eventos {
+    background-image: url('images/fondoeventos2.jpg'); /* <-- RUTA A TU IMAGEN DE WORKSHOPS/EVENTOS */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative; /* Necesario para el overlay */
+    /* background-attachment: fixed; */ /* Efecto parallax (opcional) */
+
+    /* Color de fondo de respaldo */
+    background-color: #444; /* Un gris oscuro de respaldo */
+
+    /* Ajustar padding si se desea diferente */
+    /* padding: 6rem 0; */
+
+    /* Cambiar color del texto por defecto en esta sección */
+    color: #ffffff; /* Texto blanco por defecto (ajustar según overlay) */
+}
+
+/* Overlay semitransparente sobre la imagen de fondo de Workshops/Eventos (MANTENIDO) */
+#workshops-eventos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* *** ELIGE UN COLOR Y OPACIDAD PARA EL OVERLAY DE WORKSHOPS/EVENTOS *** */
+    /* Opción 1: Overlay oscuro */
+     background-color: rgba(20, 20, 20, 0.65); /* Negro/gris muy oscuro 65% (ejemplo) */
+
+    /* Opción 2: Overlay con color (ej: primario) */
+    /* background-color: rgba(228, 77, 135, 0.5); */ /* Rosa 50% */
+
+    z-index: 0; /* Detrás del contenido */
+}
+
+/* Asegurar que el contenido de #workshops-eventos esté sobre el overlay (MANTENIDO) */
+#workshops-eventos .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajustar colores específicos dentro de la sección #workshops-eventos (MANTENIDO) */
+#workshops-eventos h2 {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#workshops-eventos h3 {
+     color: var(--secondary-color); /* Título H3 en turquesa */
+     /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); */
+}
+
+#workshops-eventos p {
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+#workshops-eventos strong {
+    color: #ffffff; /* Resaltados en blanco */
+}
+
+/* Enlaces dentro del párrafo (MANTENIDO) */
+#workshops-eventos p a {
+    color: var(--primary-color); /* Enlaces en rosa */
+    font-weight: bold;
+}
+#workshops-eventos p a:hover {
+    color: var(--secondary-color); /* Turquesa en hover */
+}
+
+/* Ajustar el botón "Infórmame de Novedades" */
+/* ESTE BOTÓN AHORA SE ESTILIZA COMO PRIMARIO CON LAS REGLAS AÑADIDAS ARRIBA (MANTENIDO) */
+/* #workshops-eventos .btn-secondary { */
+    /* Para que destaque sobre el fondo con imagen, podrías querer cambiarlo a un estilo primario */
+    /* o asegurar que el borde y texto sean claros */
+    /* border-color: var(--light-color); */
+    /* color: var(--light-color); */
+    /* background-color: rgba(255, 255, 255, 0.1); */ /* Fondo muy sutil */
+    /* margin-top: 2rem; */ /* Más espacio antes del botón */
+/* } */
+/* #workshops-eventos .btn-secondary:hover { */
+    /* background-color: var(--primary-color); */
+    /* border-color: var(--primary-color); */
+    /* color: var(--light-color); */
+/* } */
+
+/* Ajustar los image-placeholder si los usas dentro de esta sección (MANTENIDO) */
+#workshops-eventos .image-placeholder {
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo muy transparente */
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ccc;
+}
+/* --- Estilos para el Carrusel de Shows (Swiper) (MANTENIDO) --- */
+/* --- Estilos para el Carrusel de Shows (Swiper) - ADAPTADO PARA VERTICALES (MANTENIDO) --- */
+.shows-carousel {
+    width: 100%;
+    max-width: 450px; /* << REDUCIR EL ANCHO MÁXIMO para dar énfasis a la altura */
+                     /* Ajusta este valor según qué tan ancho quieres que sea el carrusel vertical */
+
+    height: 600px;    /* << AUMENTAR LA ALTURA para acomodar fotos verticales */
+                     /* O usar aspect-ratio si prefieres definirlo así: */
+    /* aspect-ratio: 3 / 4; */ /* Ejemplo de proporción vertical (3 de ancho por 4 de alto) */
+
+    margin: 2rem auto; /* Centrado y con márgenes */
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+}
+
+.shows-carousel .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #d0d0d0; /* Color de fondo mientras carga la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Asegurar que la imagen no se desborde del slide */
+}
+
+.shows-carousel .swiper-slide img {
+    display: block;
+    width: 100%;  /* << LA IMAGEN OCUPARÁ TODO EL ANCHO DEL SLIDE */
+    height: 100%; /* << LA IMAGEN OCUPARÁ TODA LA ALTURA DEL SLIDE */
+
+    /* object-fit: cover; */   /* 'cover' podría recortar mucho de una imagen vertical si el slide no tiene la misma proporción exacta. */
+                               /* Considera las alternativas: */
+
+    object-fit: contain; /* << 'contain' ASEGURA QUE TODA LA IMAGEN SEA VISIBLE */
+                         /* Podría dejar espacios vacíos a los lados o arriba/abajo si la proporción */
+                         /* de la imagen no coincide exactamente con la del slide. */
+                         /* Si usas 'contain', el 'background' del .swiper-slide se verá en esos espacios. */
+
+    /* object-fit: scale-down; */ /* Muestra la imagen como 'contain' o a su tamaño natural si es más pequeña. */
+}
+
+/* --- Estilos para las Flechas (Shows Carousel) (MANTENIDO) --- */
+.shows-carousel .swiper-button-prev,
+.shows-carousel .swiper-button-next {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+    /* Ajustar su posición si el carrusel es más estrecho */
+    /* --swiper-navigation-size: 28px; */
+}
+
+.shows-carousel .swiper-button-prev {
+    left: 10px; /* Más cerca del borde si el carrusel es estrecho */
+}
+.shows-carousel .swiper-button-next {
+    right: 10px; /* Más cerca del borde si el carrusel es estrecho */
+}
+
+.shows-carousel .swiper-button-prev:hover,
+.shows-carousel .swiper-button-next:hover {
+    color: var(--secondary-color);
+}
+
+/* (Mantén los estilos de .show-details-layout y los ajustes de texto de #shows si los tienes) */
+
+/* Opcional: Estilos para la sección de detalles si la mantuviste (MANTENIDO) */
+.show-details-layout {
+    margin-top: 2.5rem; /* Espacio después del carrusel */
+}
+
+/* Si la sección #shows tiene fondo con imagen y overlay, ajusta los textos: (MANTENIDO) */
+#shows h3 { /* Esto ya podría estar definido si copiaste de otras secciones */
+    /* color: var(--secondary-color);  */
+    /* text-shadow: 1px 1px 2px rgba(0,0,0,0.3); */
+}
+#shows ul {
+    /* color: #f0f0f0; */
+    /* text-shadow: 1px 1px 2px rgba(0,0,0,0.4); */
+    /* list-style-position: inside; */ /* Opcional para mejor alineación */
+}
+
+/* --- DISEÑOS ESPECÍFICOS (MANTENIDO) --- */
+.clases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.clase-info {
+    background-color: var(--light-color);
+    border-left: 5px solid var(--secondary-color); /* Añadido borde izquierdo para estilo */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    /* Ajustes para el fondo transparente en la sección #clases */
+    background-color: rgba(255, 255, 255, 0.432); /* Fondo blanco MUY transparente */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+    backdrop-filter: blur(5px); /* Efecto cristal (si el navegador lo soporta) */
+    -webkit-backdrop-filter: blur(5px); /* Para Safari */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-left: none; /* Eliminar el borde izquierdo si usas el borde completo */
+}
+.clase-info h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+}
+.clase-info p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+.clase-info a {
+    font-weight: bold;
+}
+
+.column-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+     margin-bottom: 2rem;
+}
+.column {
+    flex: 1;
+    min-width: 280px;
+    gap: 2rem; /* Se mantiene */
+    /* --- AÑADIDO PARA ALINEAR CONTENIDO VERTICALMENTE --- */
+    display: flex;
+    flex-direction: column;
+    /* -------------------------------------------------- */
+}
+.quien-soy-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+.quien-soy-img {
+    flex: 1;
+    min-width: 450px;
+    max-width: 600px;
+}
+.quien-soy-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+.quien-soy-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* --- SHOWS PARA EVENTOS (MANTENIDO) --- */
+#shows {
+    /* Estilos opcionales */
+}
+#shows h3 {
+    margin-top: 1.5rem;
+}
+
+/* --- Estilos específicos para la sección Shows (MANTENIDO) --- */
+#shows {
+    background-image: url('images/fondoshows2.jpg'); /* Tu imagen de fondo */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+
+    /* Color de fondo de respaldo */
+    background-color: #fdfbf4; /* Respaldo */
+
+    /* Padding general de la sección */
+    padding: 4rem 0;
+
+    position: relative; /* Necesario para ::before y .container */
+}
+
+/* --- REINTRODUCIDO: Overlay Blanquecino GENERAL sobre la imagen (MANTENIDO) --- */
+#shows::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* *** VELO BLANQUECINO GENERAL *** */
+    background-color: rgba(255, 254, 213, 0.6); /* Blanco con 60% opacidad (AJUSTA SEGÚN GUSTO) */
+    /* Puedes hacerlo más sutil (ej: 0.4) o más fuerte (ej: 0.75) */
+
+    z-index: 0; /* Detrás del contenido .container */
+}
+
+/* --- Estilo para el CONTENEDOR (AHORA CON FONDO SÓLIDO) dentro de #shows (MANTENIDO) --- */
+#shows .container {
+    position: relative;
+    z-index: 1; /* Encima del overlay ::before */
+
+    /* *** FONDO BLANCO SÓLIDO PARA MÁXIMA LEGIBILIDAD *** */
+    background-color: rgba(255, 255, 255, 0.616); /* Blanco sólido (#fff) */
+    /* Si quieres un poco de transparencia aún: rgba(255, 255, 255, 0.95); */
+
+    padding: 2.5rem; /* Espacio interno dentro del cuadro */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15); /* Sombra un poco más pronunciada */
+
+    /* Color de texto oscuro por defecto DENTRO del contenedor */
+    color: var(--dark-color);
+}
+
+/* --- Colores específicos DENTRO del contenedor de #shows (sin cambios respecto a antes) (MANTENIDO) --- */
+#shows .container h2 {
+    color: var(--dark-color);
+    text-shadow: none;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#shows .container h3 {
+     color: var(--primary-color);
+     margin-top: 2rem;
+     text-shadow: none;
+}
+
+#shows .container p,
+#shows .container li {
+    color: var(--text-color);
+    text-shadow: none;
+}
+
+#shows .container strong {
+    color: var(--dark-color);
+}
+
+/* Placeholders DENTRO del contenedor de #shows (MANTENIDO) */
+#shows .column .image-placeholder {
+     background-color: rgba(0, 0, 0, 0.03);
+     border-color: rgba(0, 0, 0, 0.1);
+     color: #888;
+     min-height: 180px;
+}
+
+/* Botón DENTRO del contenedor de #shows (MANTENIDO) */
+#shows .container .btn-primary {
+     margin-top: 2rem;
+     display: block;
+     max-width: 300px;
+     margin-left: auto;
+     margin-right: auto;
+}
+/* #shows .container .btn-primary:hover { */
+      /* Hover ya definido globalmente */
+/* } */
+/* --- Estilos específicos para la sección Quién Soy (MANTENIDO) --- */
+#quien-soy {
+    background-image: url('images/fondolaura.jpg'); /* <-- RUTA A TU IMAGEN DE FONDO */
+    background-size: cover;
+    background-position: center center; /* Centrar la imagen, puede ser 'top center' o 'bottom center' si es una foto de persona */
+    background-repeat: no-repeat;
+    position: relative; /* Necesario para el overlay */
+    /* background-attachment: fixed; */ /* Efecto parallax (opcional) */
+
+    /* Color de fondo de respaldo */
+    background-color: var(--accent-color); /* Usamos el color que tenía como sección alterna */
+
+    /* Ajustar padding si se desea diferente */
+    padding: 5rem 0; /* Un padding generoso */
+}
+
+/* Overlay blanquecino sobre la imagen de fondo de Quién Soy (MANTENIDO) */
+#quien-soy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* *** OVERLAY BLANQUECINO *** */
+    background-color: rgba(186, 255, 246, 0.555); /* Blanco con 80% de opacidad (ajusta según necesites) */
+                                                /* Un valor entre 0.7 y 0.85 suele funcionar bien */
+
+    z-index: 0; /* Detrás del contenido */
+}
+
+/* Asegurar que el contenido de #quien-soy (.quien-soy-layout) esté sobre el overlay (MANTENIDO) */
+#quien-soy .quien-soy-layout { /* Aplicamos esto al contenedor del layout para que la imagen y el texto estén encima */
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo de "cuadro" para el bloque de texto .quien-soy-text (MANTENIDO) */
+#quien-soy .quien-soy-text {
+    background-color: rgba(255, 255, 255, 0.65); /* Fondo blanco con opacidad MEDIA para el cuadro de texto */
+                                                /* Queremos que sea un poco más opaco que el overlay general */
+    padding: 2rem; /* Relleno interno para el cuadro */
+    border-radius: 8px; /* Esquinas redondeadas */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil opcional */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Sombra para destacar el cuadro */
+
+    /* Opcional: Efecto cristal si la imagen de fondo lo permite y te gusta */
+    /* backdrop-filter: blur(4px); */
+    /* -webkit-backdrop-filter: blur(4px); */
+}
+
+/* Ajustar colores específicos dentro de la sección #quien-soy y el cuadro de texto (MANTENIDO) */
+/* Los h2, h3, p por defecto ya tienen color oscuro, lo que es bueno para fondo claro */
+
+#quien-soy h2 {
+    color: var(--dark-color); /* Mantener o ajustar si es necesario */
+    /* text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); */ /* Sombra clara si el overlay es muy oscuro */
+}
+
+#quien-soy .quien-soy-text h3 { /* El H3 "Fundadora..." (MANTENIDO) */
+    color: var(--primary-color); /* Mantenemos el color primario */
+}
+
+#quien-soy .quien-soy-text p { /* MANTENIDO */
+    color: var(--text-color); /* Color de texto normal */
+    margin-bottom: 1rem; /* Asegurar espaciado */
+}
+
+#quien-soy .quien-soy-text strong { /* MANTENIDO */
+    color: var(--dark-color); /* O mantener el color del párrafo */
+}
+
+#quien-soy .quien-soy-text a { /* MANTENIDO */
+    color: var(--primary-color); /* Enlaces en rosa */
+    font-weight: bold;
+}
+#quien-soy .quien-soy-text a:hover { /* MANTENIDO */
+    color: var(--secondary-color); /* Turquesa en hover */
+}
+
+/* La imagen de Laura (.quien-soy-img) no necesita ajustes especiales aquí, */
+/* ya que el .quien-soy-layout ya está por encima del overlay. */
+/* Pero si quieres añadirle un borde o sombra: (MANTENIDO) */
+#quien-soy .quien-soy-img img {
+    /* border: 3px solid var(--light-color); */ /* Ejemplo de borde blanco */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */ /* Ejemplo de sombra */
+}
+@media (max-width: 768px) {
+    /* ... otras reglas ... */
+    .quien-soy-img {
+        margin-bottom: 1rem;
+        max-width: 300px; /* Este es el tamaño máximo en pantallas pequeñas */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* ... otras reglas ... */
+}
+/* Ajustes responsivos específicos para el cuadro de texto si es necesario (MANTENIDO) */
+@media (max-width: 768px) {
+    #quien-soy .quien-soy-layout {
+        /* El flex-direction: column ya está en tus media queries generales */
+        /* Puedes ajustar márgenes aquí si es necesario */
+    }
+    #quien-soy .quien-soy-text {
+        padding: 1.5rem; /* Menos padding en el cuadro de texto en móvil */
+        margin-top: 1.5rem; /* Espacio si la imagen va primero */
+    }
+}
+/* --- GALERÍA (MANTENIDO) --- */
+
+/* Estilos específicos para la sección Galería (MANTENIDO) */
+#galeria {
+    background-image: url('images/fondogaleria2.jpg'); /* Mantenemos tu fondo */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* background-attachment: fixed; */
+    background-color: #222; /* Mantenemos tu respaldo */
+    padding: 5rem 0;
+    color: #ffffff; /* Mantenemos tu texto blanco por defecto */
+}
+
+/* Overlay negro con toque morado sobre la imagen de fondo de Galería (MANTENIDO) */
+#galeria::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+                                rgba(0, 0, 0, 0.8),
+                                rgba(60, 20, 80, 0.65)
+                               ); /* Mantenemos tu overlay */
+    z-index: 0;
+}
+
+/* Asegurar que el contenido de #galeria (.container) esté sobre el overlay (MANTENIDO) */
+#galeria .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajustar colores específicos dentro de la sección #galeria (MANTENIDO) */
+#galeria h2 {
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
+}
+
+#galeria p { /* El párrafo introductorio "Una imagen..." (MANTENIDO) */
+    color: #e0e0e0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos para la cuadrícula de la galería (.gallery-grid) (MANTENIDO) */
+/* --- GALERÍA (MANTENIDO) --- */
+#galeria .gallery-grid {
+    display: grid;
+    /* Mostramos 2 columnas en pantallas medianas y grandes */
+    grid-template-columns: repeat(2, 1fr); /* << CAMBIO PRINCIPAL: 2 columnas */
+    gap: 2rem; /* Un poco más de espacio entre los vídeos */
+    margin-top: 2rem;
+}
+
+/* Estilos para el .gallery-item e iframe (deberían estar ya como te indiqué antes) (MANTENIDO) */
+#galeria .gallery-item {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    padding-top: 56.25%; /* Proporción 16:9 */
+    overflow: hidden;
+    background-color: #000;
+}
+
+#galeria .gallery-item iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 7px;
+}
+
+/* (Mantén los estilos para #galeria, #galeria::before, h2, y el párrafo introductorio) (MANTENIDO) */
+
+/* --- RESPONSIVE DESIGN para la Galería (MANTENIDO) --- */
+/* En pantallas más pequeñas (ej: móviles), volvemos a 1 columna */
+@media (max-width: 768px) { /* O el breakpoint que uses para móvil, ej: 600px */
+    #galeria .gallery-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+        gap: 1.5rem; /* Espacio ligeramente menor en móviles */
+    }
+}
+/* --- TESTIMONIOS (MANTENIDO) --- */
+
+/* --- Estilos específicos para la sección Testimonios (MANTENIDO) --- */
+#testimonios {
+    background-image: url('images/fondoreseñas.jpg'); /* <-- RUTA A TU IMAGEN DE FONDO RESEÑAS */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative; /* Necesario para el overlay */
+    /* background-attachment: fixed; */ /* Efecto parallax (opcional) */
+
+    /* Color de fondo de respaldo */
+    background-color: #c9ffe4; /* Un gris muy claro de respaldo */
+
+    /* Ajustar padding si se desea diferente */
+    padding: 5rem 0; /* Un padding generoso */
+}
+
+/* Overlay semitransparente sobre la imagen de fondo de Testimonios (MANTENIDO) */
+#testimonios::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* *** ELIGE UN COLOR Y OPACIDAD PARA EL OVERLAY DE TESTIMONIOS *** */
+    /* Opción 1: Overlay claro (si tu imagen es oscura o quieres texto oscuro) */
+    background-color: rgba(255, 246, 221, 0.753); /* Blanco con 85% de opacidad */
+
+    /* Opción 2: Overlay oscuro (si tu imagen es clara o quieres texto claro) */
+    /* background-color: rgba(0, 0, 0, 0.5); */ /* Negro con 50% opacidad */
+
+    /* Opción 3: Overlay con color (ej: primario muy suave) */
+    /* background-color: rgba(228, 77, 135, 0.2); */ /* Rosa primario con 20% opacidad */
+
+    z-index: 0; /* Detrás del contenido */
+}
+
+/* Asegurar que el contenido de #testimonios (.container) esté sobre el overlay (MANTENIDO) */
+#testimonios .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajustar colores específicos dentro de la sección #testimonios (MANTENIDO) */
+#testimonios h2 {
+    color: var(--dark-color); /* Título oscuro si el overlay es claro */
+    /* color: #ffffff; */ /* Título blanco si el overlay es oscuro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra muy sutil si es oscuro sobre claro */
+    margin-bottom: 2.5rem; /* Más espacio después del título */
+}
+
+/* Ajustar el estilo de cada testimonio (.testimonial) (MANTENIDO) */
+#testimonios .testimonial {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con opacidad MEDIA para cada testimonio */
+                                               /* Hacerlo un poco más opaco que el overlay general si este es claro */
+    border-left: 5px solid var(--primary-color); /* Borde rosa (cambia de --secondary-color si quieres) */
+    padding: 1.5rem 2rem; /* Ajustar padding */
+    margin-bottom: 2rem; /* Más espacio entre testimonios */
+    border-radius: 0 8px 8px 0; /* Redondear más las esquinas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12); /* Sombra un poco más pronunciada */
+
+    /* Opcional: Efecto cristal */
+    /* backdrop-filter: blur(3px); */
+    /* -webkit-backdrop-filter: blur(3px); */
+}
+
+#testimonios .testimonial blockquote { /* MANTENIDO */
+    color: #444; /* Texto de la cita más oscuro para contraste */
+    font-size: 1.05rem; /* Un poco más grande */
+    line-height: 1.7;
+    margin-bottom: 1rem; /* Más espacio antes de la cita */
+}
+
+#testimonios .testimonial cite { /* MANTENIDO */
+    color: var(--dark-color); /* Nombre del autor oscuro */
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Ajustes responsivos específicos para testimonios si es necesario (MANTENIDO) */
+@media (max-width: 768px) {
+    #testimonios .testimonial {
+        padding: 1.2rem 1.5rem;
+    }
+}
+
+.testimonial-carousel { /* MANTENIDO */
+    margin-top: 2rem;
+}
+.testimonial { /* MANTENIDO */
+    background-color: var(--light-color);
+    border-left: 5px solid var(--secondary-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.07);
+}
+.testimonial blockquote { /* MANTENIDO */
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+.testimonial cite { /* MANTENIDO */
+    display: block;
+    font-weight: bold;
+    color: var(--dark-color);
+    font-style: normal;
+    text-align: right;
+}
+
+/* --- FAQ (MANTENIDO) --- */
+#faq { /* Asegurar que FAQ también tiene estilos de fondo si no los tenía */
+    background-image: url('images/fondofaq.jpg'); /* <-- RUTA A TU IMAGEN DE FONDO FAQ */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 5rem 0;
+    background-color: #f9f9f9; /* Respaldo */
+}
+
+#faq::before { /* Overlay claro semitransparente */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(253, 245, 228, 0.88); /* Blanco con 88% de opacidad */
+    z-index: 0;
+}
+
+#faq .container {
+    position: relative;
+    z-index: 1;
+}
+
+#faq h2 {
+    color: var(--dark-color);
+    margin-bottom: 2.5rem;
+}
+
+.faq-list {
+    margin-top: 2rem;
+}
+.faq-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Borde más sutil */
+    padding-bottom: 1.5rem;
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+.faq-item dt {
+    font-weight: bold;
+    font-size: 1.15rem; /* Un poco más grande */
+    color: var(--dark-color);
+    cursor: pointer;
+    margin-bottom: 0.75rem; /* Más espacio */
+    position: relative;
+}
+.faq-item dd {
+    margin-left: 0;
+    color: var(--text-color);
+    line-height: 1.7;
+    display: none; /* Oculto por defecto */
+}
+.faq-item.active dd {
+    display: block;
+}
+.faq-item dd a {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+.faq-item dd a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* --- CALENDARIO (MANTENIDO) --- */
+/* --- Estilos específicos para la sección Calendario REDISEÑADA (MANTENIDO) --- */
+#calendario {
+    background-image: url('images/fondocalendario2.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 5rem 0 3rem 0; /* Ajustado padding inferior */
+    color: #ffffff;
+}
+
+#calendario::before { /* Overlay (el que ya tenías) */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Negro con 40% opacidad (ajusta si es necesario) */
+    z-index: 0;
+}
+
+#calendario .container {
+    position: relative;
+    z-index: 1;
+}
+
+#calendario h2 {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1rem;
+    text-align: center; /* Centrar título principal */
+}
+
+#calendario .section-intro { /* Párrafo introductorio de la sección */
+    color: #e0e0e0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos para los bloques de eventos destacados (MANTENIDO) */
+.evento-destacado-wrapper {
+    background-color: rgba(255, 255, 255, 0.08); /* Fondo muy sutil para el bloque */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+.evento-destacado-wrapper:last-child {
+    margin-bottom: 1rem;
+}
+
+.evento-titulo {
+    font-size: 1.8rem; /* Más pequeño que h2 */
+    color: var(--secondary-color); /* Turquesa para destacar */
+    text-align: center;
+    margin-bottom: 0.75rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+.evento-titulo span { /* Para los iconos emoji */
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.evento-fecha-lugar {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+.evento-fecha-lugar strong {
+    color: #ffffff;
+    font-style: normal;
+}
+
+.evento-descripcion p {
+    color: #e0e0e0;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.evento-descripcion p:last-child {
+    margin-bottom: 2rem; /* Espacio antes del carrusel o CTA */
+}
+
+/* Carrusel específico para el Retiro (MANTENIDO) */
+/* Carrusel específico para el Retiro (MANTENIDO) */
+.retiro-carousel {
+    width: 100%; /* << Ancho del contenedor padre menos los márgenes deseados (1rem a cada lado) */
+    /* O si prefieres, puedes quitar el max-width o ponerlo al 100% del padre
+       y controlar el espaciado desde el padding del .evento-destacado-wrapper */
+    /* width: 100%; */ /* Si el padding del padre ya maneja los márgenes */
+    /* max-width: none; */ /* Quitar el límite de 700px si no lo quieres */
+
+    height: auto;
+    aspect-ratio: 9/16; /* Mantenemos la proporción, ajústala si tus carteles son diferentes */
+                       /* Ej: 3/4 para más vertical, 16/9 para más horizontal */
+
+    margin: 0 auto 2rem auto; /* Centrado horizontal, con margen inferior */
+    border-radius: 8px; /* Mantenemos el borde redondeado */
+    overflow: hidden; /* Importante */
+}
+
+.retiro-carousel .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Para que se vea todo el cartel, puede dejar bandas si la proporción no es exacta */
+}
+.retiro-carousel .swiper-button-prev.retiro-prev, /* Flechas específicas */
+.retiro-carousel .swiper-button-next.retiro-next {
+    color: rgba(255, 255, 255, 0.8);
+    --swiper-navigation-size: 30px; /* Tamaño de las flechas */
+}
+.retiro-carousel .swiper-button-prev.retiro-prev:hover,
+.retiro-carousel .swiper-button-next.retiro-next:hover {
+    color: var(--secondary-color);
+}
+.retiro-carousel .swiper-pagination.retiro-pagination .swiper-pagination-bullet {
+    background: rgba(255,255,255,0.7);
+    opacity: 1;
+}
+.retiro-carousel .swiper-pagination.retiro-pagination .swiper-pagination-bullet-active {
+    background: var(--secondary-color);
+}
+
+.evento-cta {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.evento-cta .btn-lg { /* Botón más grande para el retiro */
+    padding: 1rem 2.5rem;
+    font-size: 1.15rem;
+}
+
+/* Estilos para Clases de Junio (MANTENIDO) */
+/* Estilos para Clases de Junio (MANTENIDO) */
+/* Asegurar que los párrafos de llamada a la acción en Clases sean negros */
+#clases .clases-cta-text {
+    color: #000000; /* O var(--dark-color); */
+    text-shadow: none; /* Asegurarse de que no tengan sombra si el fondo es claro */
+}
+.clases-junio { /* Contenedor general del bloque de clases de junio (ya lo tienes) */
+    /* ... (otros estilos que ya tengas para .evento-destacado-wrapper.clases-junio) ... */
+}
+
+.clases-junio-contenido {
+    /* display: flex; */ /* << Comentamos o eliminamos el flexbox aquí */
+    /* flex-wrap: wrap; */
+    /* gap: 2rem; */
+    /* align-items: center; */
+    margin-top: 1.5rem;
+    text-align: center; /* Centrar el contenido del bloque */
+}
+
+.clases-junio-cartel {
+    /* flex: 1 1 300px; */ /* << Comentamos o eliminamos las propiedades flex */
+    /* max-width: 400px; */ /* << Comentamos o eliminamos el max-width anterior */
+
+    width: 100%;        /* << El cartel ocupa el 80% del ancho de su contenedor */
+    max-width: 1000px;   /* << Un ancho máximo para que no sea GIGANTE en pantallas muy anchas. AJUSTA ESTO. */
+                       /* Para un cartel 9:16, un ancho de 400-500px suele ser bueno para ver detalles. */
+    margin: 0 auto 1.5rem auto; /* Centrado horizontalmente y con margen inferior */
+}
+
+.clases-junio-cartel img {
+    width: 100%; /* La imagen llena el contenedor .clases-junio-cartel */
+    height: auto;  /* Mantiene la proporción */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: block; /* Para evitar espacio extra debajo de la imagen */
+}
+
+.clases-junio-descripcion {
+    /* flex: 1 1 400px; */ /* << Comentamos o eliminamos las propiedades flex */
+    text-align: left; /* Alineamos el texto de la descripción a la izquierda o centro según prefieras */
+    /* text-align: center; */ /* Si prefieres el texto centrado */
+    max-width: 700px; /* Un ancho máximo para la descripción para mejor legibilidad */
+    margin: 0 auto;   /* Centrar el bloque de descripción si tiene max-width */
+}
+.clases-junio-descripcion p {
+    /* Estilos para los párrafos de la descripción (ya los tienes de .evento-descripcion p) */
+    /* color: #e0e0e0; */
+    /* line-height: 1.7; */
+    margin-bottom: 1rem;
+}
+.clases-junio-descripcion .evento-cta { /* El botón dentro de la descripción */
+    text-align: center; /* Centrar el botón */
+    margin-top: 1.5rem;
+}
+
+/* Ajustes responsivos específicos para esta sección (MANTENIDO) */
+@media (max-width: 768px) {
+    /* ... (tus otros @media query de #calendario) ... */
+
+    .clases-junio-cartel {
+        width: 90%; /* En móvil, puede ocupar un poco más del ancho, ej: 90% */
+        max-width: 450px; /* Ajustar el max-width para móvil también */
+    }
+    .clases-junio-descripcion {
+        text-align: center; /* Centrar el texto de descripción en móvil puede quedar bien */
+    }
+}
+/* Ajustes al .calendario-list original si se usa (el que ya tenías) (MANTENIDO) */
+.calendario-list { /* MANTENIDO */
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.05); /* Más sutil que antes */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+.calendario-list h4 { /* MANTENIDO */
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+.calendario-list ul { /* MANTENIDO */
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+.calendario-list li { /* MANTENIDO */
+    color: #d0d0d0;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+}
+.calendario-list li:last-child { /* MANTENIDO */
+    border-bottom: none;
+}
+.calendario-list a { /* MANTENIDO */
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.calendario-list a:hover { /* MANTENIDO */
+    color: var(--secondary-color);
+}
+
+
+/* --- FORMULARIO DE CONTACTO (MODIFICADO) --- */
+/* --- Estilos específicos para la sección Contacto (MODIFICADO) --- */
+#contacto {
+    background-image: url('images/fondocontacto.jpg'); /* <-- RUTA A TU IMAGEN DE FONDO CONTACTO */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative; /* Necesario para el overlay */
+    /* background-attachment: fixed; */ /* Efecto parallax (opcional) */
+
+    /* Color de fondo de respaldo */
+    background-color: #fff5e6; /* Un color crema muy claro de respaldo */
+
+    /* Ajustar padding si se desea diferente */
+    padding: 5rem 0;
+
+    /* Texto por defecto en esta sección (antes del overlay) */
+    /* color: var(--dark-color); -- Ya lo hereda de body, ideal para overlay claro */
+}
+
+/* Overlay claro cálido semitransparente sobre la imagen de fondo de Contacto (MANTENIDO) */
+#contacto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* *** OVERLAY CLARO CÁLIDO *** */
+    /* Un tono crema suave, melocotón muy claro o amarillo pálido funcionará bien. */
+
+    /* Opción 1: Crema/Beige claro con opacidad */
+    background-color: rgba(255, 248, 230, 0.692); /* Ejemplo: un beige muy claro con 85% opacidad */
+
+    /* Opción 2: Amarillo pálido con opacidad */
+    /* background-color: rgba(255, 250, 205, 0.8); */ /* Amarillo limón muy claro con 80% opacidad */
+
+    /* Opción 3: Melocotón muy claro con opacidad */
+    /* background-color: rgba(255, 229, 180, 0.75); */ /* Melocotón claro con 75% opacidad */
+
+    z-index: 0; /* Detrás del contenido */
+}
+
+/* Asegurar que el contenido de #contacto (.container) esté sobre el overlay (MANTENIDO) */
+#contacto .container {
+    position: relative;
+    z-index: 1;
+    /* Color de texto oscuro por defecto DENTRO del contenedor (still applies) */
+    color: var(--dark-color);
+}
+
+/* Ajustar colores específicos dentro de la sección #contacto (MANTENIDO) */
+#contacto h2 {
+    color: var(--dark-color); /* Título oscuro para buen contraste */
+    /* text-shadow: 1px 1px 2px rgba(255,255,255,0.3); */ /* Sombra clara si el fondo es muy texturizado */
+    margin-bottom: 1rem;
+    text-align: center; /* Centrar el título */
+}
+
+/* *** AÑADIDO: Estilo para el nuevo cuadro del párrafo introductorio *** */
+#contacto .contact-intro-box {
+    background-color: rgba(255, 255, 255, 0.432); /* Fondo blanco transparente como en .clase-info */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+    backdrop-filter: blur(5px); /* Efecto cristal */
+    -webkit-backdrop-filter: blur(5px); /* Para Safari */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 1.5rem; /* Relleno interno */
+    border-radius: 8px; /* Esquinas redondeadas */
+    margin-bottom: 2rem; /* Espacio entre este cuadro y el formulario */
+    max-width: 700px; /* Opcional: limitar ancho para mejor legibilidad */
+    margin-left: auto; /* Centrar si se limita el ancho */
+    margin-right: auto; /* Centrar si se limita el ancho */
+    text-align: center; /* Centrar el texto dentro del cuadro */
+}
+
+/* Ajustar el color del texto dentro de este nuevo cuadro */
+#contacto .contact-intro-box p {
+    color: var(--dark-color); /* O un gris oscuro para mejor contraste */
+    text-shadow: none; /* Quitar sombra si el fondo es claro */
+    margin-bottom: 0; /* Eliminar margen inferior del párrafo dentro del cuadro */
+    font-size: 1.1rem; /* Hacer el texto un poco más grande */
+    line-height: 1.6; /* Asegurar buen interlineado */
+}
+/* *** FIN AÑADIDO: Estilo para el nuevo cuadro de texto *** */
+
+
+/* Estilos para el formulario de contacto sobre el fondo con imagen (MANTENIDO) */
+#contact-form {
+    margin-top: 2rem; /* Asegurar espacio después del cuadro de texto */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con opacidad MEDIA para el formulario */
+                                               /* Ligeramente más opaco que el overlay general si este es muy transparente */
+    padding: 2.5rem; /* Más padding para el formulario */
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* Sombra más notable */
+
+    /* Opcional: Efecto cristal */
+    /* backdrop-filter: blur(4px); */
+    /* -webkit-backdrop-filter: blur(4px); */
+}
+.form-group { /* MANTENIDO */
+    margin-bottom: 1.5rem;
+}
+.form-group label { /* MANTENIDO */
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+.form-group input[type="text"], /* MANTENIDO */
+.form-group input[type="email"], /* MANTENIDO */
+.form-group select, /* MANTENIDO */
+.form-group textarea { /* MANTENIDO */
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5; /* Asegurar altura consistente */
+    /* Ajustes para fondo transparente en #contacto */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo de los campos ligeramente transparente */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Borde más visible */
+    color: var(--dark-color); /* Texto dentro de los campos oscuro */
+}
+.form-group textarea { /* MANTENIDO */
+    resize: vertical;
+}
+.form-group select { /* MANTENIDO */
+     appearance: none;
+     background-color: white;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E"); /* Flecha SVG básica */
+     background-repeat: no-repeat;
+     background-position: right 0.7rem center;
+     background-size: 1em;
+     padding-right: 2.5rem; /* Espacio para la flecha */
+     /* Ajuste para fondo transparente en #contacto */
+     background-color: rgba(255, 255, 255, 0.8);
+     border: 1px solid rgba(0, 0, 0, 0.2);
+     color: var(--dark-color);
+}
+#contact-form button { /* MANTENIDO */
+    width: 100%;
+}
+#contact-form input[type="text"]::placeholder, /* MANTENIDO */
+#contact-form input[type="email"]::placeholder, /* MANTENIDO */
+#contact-form textarea::placeholder { /* MANTENIDO */
+    color: #777; /* Placeholder un poco más claro */
+}
+
+
+/* Párrafo de Instagram (MANTENIDO) */
+#contacto .contact-insta {
+    text-align: center;
+    margin-top: 2.5rem; /* Espacio después del formulario */
+    font-weight: bold;
+    color: var(--dark-color); /* Asegurar color oscuro */
+}
+#contacto .contact-insta a { /* MANTENIDO */
+    color: var(--primary-color); /* Enlace en rosa */
+}
+#contacto .contact-insta a:hover { /* MANTENIDO */
+    color: var(--secondary-color); /* Turquesa en hover */
+}
+
+/* --- FOOTER (MANTENIDO) --- */
+footer { /* MANTENIDO */
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer p { /* MANTENIDO */
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+.social-links a { /* MANTENIDO */
+    color: var(--light-color); /* No afecta a la imagen, pero es bueno tenerlo */
+    margin: 0 0.5rem;
+    display: inline-block; /* Para que el margen funcione bien y para alinear */
+    /* font-size: 1.5rem; */ /* No se aplica a la imagen */
+    text-decoration: none;
+}
+
+.social-links a:hover img { /* Opcional: efecto hover en la imagen (MANTENIDO) */
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* --- Estilo para los iconos de redes sociales en el footer (MANTENIDO) --- */
+.social-icon {
+    height: 50px; /* <<< AJUSTA ESTA ALTURA AL TAMAÑO DESEADO */
+    width: auto;   /* Mantiene la proporción */
+    vertical-align: middle; /* Ayuda a alinear con cualquier texto o icono adyacente */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Para el efecto hover */
+}
+
+/* --- PLACEHOLDERS VISUALES (Eliminar al añadir contenido real) (MANTENIDO) --- */
+.image-placeholder {
+    background-color: #e0e0e0;
+    /*border: 1px dashed #ccc;*/
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    border-radius: 8px;
+    margin-top: auto;
+}
+.image-placeholder.small-placeholder {
+    min-height: 150px;
+}
+/* Asegurar que las imágenes en las columnas se alineen verticalmente (AÑADIDO) */
+/* --- Estilos específicos para el image-placeholder en Workshops y Eventos --- */
+#workshops-eventos .column .image-placeholder {
+    margin-top: auto; /* Esto es clave para empujar el div hacia abajo */
+    margin-bottom: 1rem; /* Mantener un margen inferior si lo deseas */
+    /* Puedes quitar border, background, min-height si ya están en la regla general
+       y no necesitas anularlos. Solo necesitas anular el margin. */
+}
+.quien-soy-img.image-placeholder {
+     min-height: 300px;
+}
+
+.image-placeholder img {
+    width: 100%;          /* Hace que la imagen ocupe todo el ancho */
+    height: 100%;         /* Hace que la imagen ocupe toda la altura */
+    object-fit: cover;    /* Escala la imagen manteniendo proporciones para cubrir el contenedor */
+    display: block;       /* Buena práctica para imágenes */
+    border-radius: 8px;
+}
+/* --- Ajustar el object-fit para las imágenes de placeholder en Workshops/Eventos --- */
+#workshops-eventos .column .image-placeholder img {
+    object-fit: contain; /* Asegura que toda la imagen sea visible */
+    /* width: 100%; height: 100%; display: block; border-radius: 8px;
+       Estos ya se heredan de la regla general, no necesitas repetirlos
+       a menos que quieras cambiarlos. */
+}
+/* --- RESPONSIVE DESIGN (MANTENIDO) --- */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    .hero-section h1 { font-size: 2.8rem; }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95); /* Blanco casi opaco para legibilidad */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+        margin: 0; /* Resetear margen */
+    }
+
+    .main-nav ul.active {
+        display: flex;
+    }
+
+    .main-nav li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+        color: var(--dark-color); /* Texto oscuro en menú móvil desplegado */
+    }
+    .main-nav a:hover, .main-nav a.active {
+        background-color: var(--accent-color);
+        border-bottom-color: #eee; /* Mantener borde o quitar */
+        color: var(--primary-color); /* Color primario en hover/active */
+    }
+
+    .column-layout {
+        flex-direction: column;
+    }
+    .quien-soy-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    .quien-soy-img {
+        margin-bottom: 1rem;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .clases-grid {
+         grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        padding: 1.5rem 1rem; /* Ajustar padding en móvil */
+    }
+
+    .comunidad-carousel {
+        height: 350px; /* Ajustar altura carrusel en móvil */
+    }
+    .comunidad-carousel .swiper-button-prev,
+    .comunidad-carousel .swiper-button-next {
+         /* Ocultar flechas si son muy grandes o molestan */
+         /* display: none; */
+         /* O hacerlas más pequeñas */
+          --swiper-navigation-size: 24px;
+          left: 10px;
+          right: 10px;
+    }
+}
+@media (max-width: 480px) {
+     html {
+        font-size: 14px;
+    }
+     h1 { font-size: 2.2rem; }
+     .hero-section h1 { font-size: 2.5rem; }
+     .hero-section p { font-size: 1.1rem; }
+     .hero-buttons .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        margin: 0.3rem;
+     }
+      .hero-content {
+        padding: 1rem 0.5rem;
+    }
+     .comunidad-carousel {
+        height: 280px; /* Ajustar altura carrusel en móvil pequeño */
+    }
+}

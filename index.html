@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Me Roll | Roller Dance Madrid - Comunidad, Clases, Eventos</title>
+    <meta name="description" content="Únete a Make Me Roll, la comunidad de Roller Dance en Madrid. Clases para todos los niveles, workshops, eventos y pura pasión por el patinaje y el baile.">
+    
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- *** AÑADIDO: CSS DE SWIPER *** -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Añade aquí Font Awesome si quieres usar iconos (opcional) -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#hero" class="logo">
+                <img src="images/logo2.png" alt="Make Me Roll Logo" class="logo-img"> 
+                <span class="logo-text">MAKE ME ROLL</span> 
+            </a>
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#comunidad">Comunidad</a></li>
+                    <li><a href="#clases">Clases</a></li>
+                    <li><a href="#workshops-eventos">Workshops y Eventos</a></li>
+                    <li><a href="#shows">Shows</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#quien-soy">Quién Soy</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#calendario">Calendario</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+       <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <!-- Video Background -->
+            <video class="hero-video-background" autoplay loop muted playsinline poster="images/Fondohero.JPG">
+                <source src="images/videofondo2.mp4" type="video/mp4">
+                Tu navegador no soporta vídeos HTML5. Considera usar una imagen de fondo aquí.
+            </video>
+
+            <!-- Overlay y Contenido -->
+            <div class="hero-content container">
+                <h1>MAKE ME ROLL</h1>
+                <p>Descubre y vive el Roller Dance en Madrid.<br>Únete a nuestra comunidad y encuentra tu flow sobre ruedas.</p>
+                <div class="hero-buttons">
+                    <a href="#clases" class="btn btn-primary">Ver Clases</a>
+                    <a href="#comunidad" class="btn btn-primary">Conoce la Comunidad</a> 
+                    <a href="#workshops-eventos" class="btn btn-primary">Workshops y Eventos</a> 
+                    <a href="#shows" class="btn btn-primary">Shows</a> 
+                </div>
+            </div>
+        </section>
+
+<!-- COMUNIDAD -->
+        <section id="comunidad" class="content-section">
+            <div class="container">
+                <h2>Nuestra Tribu Sobre Ruedas</h2>
+                <p>Make Me Roll nace de la pasión de <strong>Laura Rollerdancer</strong> por impulsar la cultura y la práctica del <strong>Roller Dance</strong> en Madrid. Esta disciplina surgió en EEUU entre los años 70 y 80, creciendo al ritmo del funk, disco, hip hop y R&B en las pistas de patinaje.</p>
+                <p>Hoy, este movimiento se ha expandido por Europa, con comunidades fuertes en Holanda, Francia, Inglaterra y otros países. El festival <strong>Skatelove Barcelona</strong> atrae cada mes de septiembre a rollerdancers de todo el mundo, convirtiéndose en una cita esencial.</p>
+                <p>En Madrid, somos cada vez más los grupos y clubes que disfrutamos del Roller Dance y cada vez hay más personas interesadas en expandir la comunidad. Laura, con experiencia impartiendo clases desde 2013, creó Make Me Roll con el objetivo de ser un <strong>punto de conexión</strong>, fortaleciendo el sentimiento de <strong>unión, diversidad y creatividad</strong> que define a la comunidad rollerdancer. Queremos seguir creciendo y compartiendo la pasión por rodar juntos.</p>
+                <!-- *** INICIO DEL CARRUSEL SWIPER *** -->
+                <div class="swiper comunidad-carousel"> 
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <img src="images/Comunidad.jpg" alt="Comunidad Make Me Roll patinando juntos 1">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <img src="images/Comunidad2.jpg" alt="Comunidad Make Me Roll patinando juntos 2"> 
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <img src="images/Comunidad3.jpg" alt="Comunidad Make Me Roll patinando juntos 3">
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                             <img src="images/Comunidad4.jpg" alt="Comunidad Make Me Roll patinando juntos 4">
+                        </div>
+                         <!-- Slide 5 -->
+                        <div class="swiper-slide">
+                             <img src="images/Comunidad5.jpg" alt="Comunidad Make Me Roll patinando juntos 5">
+                        </div>
+                    </div>
+                    <!-- Flechas de Navegación -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- Opcional: Paginación (puntitos) -->
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+                 <!-- *** FIN DEL CARRUSEL SWIPER *** -->
+
+            </div>
+        </section>
+
+        <!-- CLASES -->
+<section id="clases" class="content-section section-accent">
+    <div class="container">
+        <h2>Encuentra tu Flow: Clases de Roller Dance</h2>
+
+        <!-- *** NUEVO: Contenedor para el texto y lista dentro del cuadro *** -->
+        <div class="clases-intro-box">
+            <p>En Make Me Roll, no solo queremos mantener viva la llama de la comunidad, sino <strong>hacerla crecer contigo</strong>. Nuestras clases están diseñadas para que desarrolles tus <strong>habilidades sobre patines</strong>, encuentres tu <strong>estilo personal</strong> y conectes con otros/as a través de dinámicas y coreografías grupales.</p>
+            <p>Laura imparte clases semanales de Roller Dance en Madrid. Son sesiones completas de <strong>1 hora y 30 minutos</strong> donde trabajarás:</p>
+            <ul>
+                <li>Conciencia corporal y técnica de patinaje.</li>
+                <li>Pasos y secuencias de Roller Dance.</li>
+                <li>Técnicas de danzas urbanas y contemporáneas.</li>
+                <li>Coreografía y baile grupal.</li>
+            </ul>
+        </div>
+        <!-- *** FIN NUEVO CONTENEDOR *** -->
+
+        <h3>Horarios y Niveles</h3>
+        <div class="clases-grid">
+            <div class="clase-info">
+                <h4>MARTES</h4>
+                <p><strong>Nivel Iniciación:</strong> 18:30 - 20:00<br><em>Ideal si estás empezando o quieres afianzar tus bases.</em></p>
+                <p><strong>Nivel Intermedio-Avanzado:</strong> 20:00 - 21:30<br><em>Para quienes ya controlan y buscan nuevos retos.</em></p>
+                <p><strong>Lugar:</strong> [Nombre Espacio Martes], Madrid <br><a href="https://maps.app.goo.gl/xd16MDQeeuGWH8RP7" target="_blank" rel="noopener noreferrer">Ver Mapa</a></p>
+            </div>
+            <div class="clase-info">
+                <h4>DOMINGOS</h4>
+                <p><strong>Todos los Niveles:</strong> 10:15 - 11:45<br><em>Sesiones para mezclar y compartir. ¡Consulta fechas!</em></p>
+                <p><strong>Frecuencia:</strong> 2 domingos al mes (Consultar <a href="#calendario">Calendario</a>)</p>
+                <p><strong>Lugar:</strong> [Nombre Espacio Domingos], Madrid <br><a href="https://maps.app.goo.gl/PB7sqm9tKWGaesY67" target="_blank" rel="noopener noreferrer">Ver Mapa</a></p>
+            </div>
+        </div>
+
+       <p class="clases-cta-text"><strong>¡Anímate a rodar con nosotros!</strong></p>
+        <p class="clases-cta-text">Contacta para más info o para unirte:</p>
+        <a href="#contacto" class="btn btn-primary">¡Quiero Apuntarme!</a>
+        <p class="clases-cta-text">O encuéntranos en Instagram: <a href="https://instagram.com/laura_rollerdancer" target="_blank" rel="noopener noreferrer">@laura_rollerdancer</a></p>
+    </div>
+</section>
+
+        <!-- WORKSHOPS Y EVENTOS -->
+        <section id="workshops-eventos" class="content-section">
+            <div class="container">
+                <h2>Workshops y Eventos</h2>
+                <div class="column-layout">
+                    <div class="column">
+                        <h3>Workshops Especiales</h3>
+                        <p>Amplía tus horizontes y enriquece tu aprendizaje. Laura imparte workshops y masterclases para diferentes clubes y asociaciones a nivel nacional e internacional, participando en eventos y festivales. En Madrid también organizamos workshops con profesionales destacados de la escena nacional e internacional. Si estás interesado en organizar un evento e incluir el Roller Dance no dudes en <a href="#contacto">contactar</a>!</p>
+                        <p>Para estar al día, síguenos en <a href="https://instagram.com/laura_rollerdancer" target="_blank" rel="noopener noreferrer">@laura_rollerdancer</a> o <a href="#contacto">contáctanos</a>.</p>
+                        <div class="image-placeholder small-placeholder">
+                           <img src="images/fotoworkshop.jpg" alt="Workshop de Roller Dance Make Me Roll">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h3>Eventos</h3>
+                        <p>Make Me Roll quiere ser un impulso para la cultura Roller Dance en Madrid. Organizamos fiestas Roller Disco en Madrid y uno de nuestros deseos es crear un festival de Roller Dance en Madrid en el que podréis disfrutar de workshops, Roller Parties, exhibiciones y battles.</p>
+                         <div class="image-placeholder small-placeholder">
+                           <img src="images/fotoevento.jpg" alt="Evento de Roller Dance Make Me Roll">
+                        </div>
+                    </div>
+                </div>
+                 <a href="#contacto" class="btn btn-secondary">Infórmame de Novedades</a>
+            </div>
+        </section>
+
+        <!-- SHOWS PARA EVENTOS -->
+<section id="shows" class="content-section">
+    <!-- Opcional: Puedes añadir un fondo a toda la sección #shows como hiciste con otras -->
+    <div class="container">
+        <h2>Shows para Eventos: Magia Sobre Ruedas</h2>
+        <p>¿Quieres darle un toque único, original y lleno de energía a tu próximo evento? Make Me Roll ofrece <strong>shows de Roller Dance</strong> adaptados a tus necesidades.</p>
+                <p>Desde actuaciones vibrantes para fiestas y celebraciones privadas (cumpleaños, bodas diferentes) hasta performances dinámicas para eventos corporativos, festivales o acciones publicitarias. Aportamos espectáculo, ritmo y una estética inolvidable.</p>
+
+
+        <!-- *** INICIO DEL CARRUSEL SWIPER PARA SHOWS *** -->
+        <div class="swiper shows-carousel">  <!-- << Nueva clase para este carrusel -->
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="images/shows.jpg" alt="Show de Roller Dance Make Me Roll 1">
+                </div>
+                <!-- Slide 2 (Añade tus otras imágenes de shows aquí) -->
+                <div class="swiper-slide">
+                    <img src="images/shows2.jpg" alt="Show de Roller Dance Make Me Roll 2">
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="images/shows3.jpg" alt="Show de Roller Dance Make Me Roll 3">
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <img src="images/shows4.jpg" alt="Show de Roller Dance Make Me Roll 4">
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                    <img src="images/shows5.jpg" alt="Show de Roller Dance Make Me Roll 5">
+                </div>
+            </div>
+            <!-- Flechas de Navegación -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- Opcional: Paginación (puntitos) -->
+            <!-- <div class="swiper-pagination"></div> -->
+        </div>
+        <!-- *** FIN DEL CARRUSEL SWIPER PARA SHOWS *** -->
+
+        <!-- Mantenemos la sección de "¿Qué ofrecemos?" e "Ideal para:" -->
+        <!-- Puedes decidir si quieres esto antes o después del carrusel, o en un layout diferente -->
+        <div class="column-layout show-details-layout"> <!-- Nueva clase para este layout -->
+            <div class="column">
+                <h3>¿Qué ofrecemos?</h3>
+                <ul>
+                    <li>Shows coreografiados (solo, dúo, grupo).</li>
+                    <li>Animación y freestyle para dinamizar espacios.</li>
+                    <li>Adaptación a diferentes estilos musicales y temáticas.</li>
+                    <li>Patinadores/as con experiencia y profesionalidad.</li>
+                    <li>¡Una dosis de flow y buena vibra garantizada!</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Ideal para:</h3>
+                <ul>
+                    <li>Fiestas privadas y cumpleaños.</li>
+                    <li>Bodas y celebraciones especiales.</li>
+                    <li>Eventos corporativos y de empresa.</li>
+                    <li>Festivales y eventos culturales.</li>
+                    <li>Lanzamientos de marca y publicidad.</li>
+                    <li>¡Y cualquier ocasión que busque sorprender!</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>¿Interesado/a?</h3>
+        <p>Cuéntanos tu idea a través del formulario de contacto. Por favor, incluye detalles como el tipo de evento, fecha, lugar y qué tienes en mente.</p>
+        <a href="#contacto" class="btn btn-primary">Solicitar Información para Shows</a>
+        <!-- <a href="[LINK_VIDEO_SHOWREEL]" target="_blank" class="btn btn-secondary">Ver Showreel</a> -->
+    </div>
+</section>
+
+        <!-- GALERÍA -->
+        <section id="galeria" class="content-section section-accent">
+            <div class="container">
+                <h2>Galería: Siente el Flow</h2>
+                <p>Una imagen (¡o un vídeo!) vale más que mil palabras. Aquí tienes una muestra de la energía de Make Me Roll.</p>
+                <div class="gallery-grid">
+                    <!-- Video 1 -->
+                    <div class="gallery-item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQ7CSr_PKTM?si=SQ1ZzoQ0XYiJ6Nv-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <!-- Video 2 -->
+                    <div class="gallery-item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bvsAPc2S6Uo?si=_GAtyWm5kGnlH4Rh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <!-- Video 3 -->
+                    <div class="gallery-item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/A3kagq6uxZ4?si=rgr2_Mt5lCbhHDeZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <!-- Video 4 -->
+                    <div class="gallery-item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/IbGeCH90cEw?si=DI7MbN_KE5q5Nzw6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <!-- Ya no necesitamos los ítems 5 y 6 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIOS -->
+        <!-- <section id="testimonios" class="content-section">
+            <div class="container">
+                <h2>Lo que dicen nuestros Rollers</h2>
+                <div class="testimonial-carousel"> 
+                    <div class="testimonial">
+                        <blockquote>
+                            "¡Las clases de Laura son pura energía! He aprendido muchísimo y el ambiente es genial. ¡Recomendadísimo!"
+                        </blockquote>
+                        <cite>– Ana G. (Alumna Nivel Iniciación)</cite>
+                    </div>
+                    <div class="testimonial">
+                         <blockquote>
+                            "Descubrí el Roller Dance con Make Me Roll y ahora no puedo parar. ¡Gracias por crear esta comunidad tan guay en Madrid!"
+                        </blockquote>
+                        <cite>– Carlos M. (Alumno Nivel Intermedio)</cite>
+                    </div>
+                     <div class="testimonial">
+                         <blockquote>
+                            "Los workshops son una pasada, traen a gente increíble. Y las clases regulares me ayudan a desconectar y disfrutar."
+                        </blockquote>
+                        <cite>– Sofia L. (Alumna Avanzada)</cite>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- QUIÉN SOY -->
+        <section id="quien-soy" class="content-section section-accent">
+            <div class="container quien-soy-layout">
+                 <div class="quien-soy-img image-placeholder">
+                      <img src="images/Lauraweb.JPG" alt="Laura Rollerdancer">
+                 </div>
+                 <div class="quien-soy-text">
+                    <h2>Laura Rollerdancer</h2>
+                    <h3>Fundadora de Make Me Roll</h3>
+                    <p>Soy Laura, la persona detrás de Make Me Roll. Patino y bailo desde la infancia, pero mi conexión profunda con el patinaje nació en el parque del Retiro y haciendo street por las calles de Madrid. Mi pasió por el Roller Dance se encendió gracias a la inspiración de rollerdancers internacionales en eventos como el organizado por Michelle Barrios en Barcelona en 2012.</p>
+                    <p>Gracias a mi experiencia en diferentes estilos de danza y en patinaje artístico, me interesé en la aplicación de la técnica de la danza afro, urbana y contemporánea al Roller Dance. Continuo esta investigación sobre las posibilidades que ofrece la danza sobre ruedas. Organizo clases de rollerdance y talleres de danza en patines, con el objetivo de desarrollar el potencial del alumnado a nivel grupal e individual.</p> 
+                    <p>He tenido oportunidad de impartir Masterclases en festivales como <strong>Madrid Urban Fest</strong>, así como para clubes y asociaciones a nivel nacional. He organizado Roller Discos en Madrid y he participado como bailarina y coreógrafa en shows para festivales como <strong>Skatelove Barcelona</strong> y para videoclips como “El paso del tiempo” de <strong>Rozalén</strong>. Además de rodar, hago música con mi dúo <strong>Sibila Music</strong>. Puedes escucharnos <a href="[ENLACE A SIBILA MUSIC]" target="_blank" rel="noopener noreferrer">aquí</a>.</p> 
+                    <p>Sígueme en Instagram: <a href="https://instagram.com/laura_rollerdancer" target="_blank" rel="noopener noreferrer">@laura_rollerdancer</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (PREGUNTAS FRECUENTES) -->
+        <section id="faq" class="content-section">
+            <div class="container">
+                <h2>Preguntas Frecuentes (FAQ)</h2>
+                <dl class="faq-list">
+                    <div class="faq-item">
+                        <dt>¿Necesito mis propios patines para empezar?</dt>
+                        <dd>Sí, para las clases regulares es necesario traer tus propios patines (quads preferiblemente). Si tienes dudas sobre qué patines comprar, ¡pregúntanos!</dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt>¿Qué nivel de patinaje necesito para la clase de iniciación?</dt>
+                        <dd>Lo básico es mantener el equilibrio, saber deslizar un poco hacia adelante y frenar (aunque sea de forma básica). Si nunca te has puesto unos patines, quizás necesites unas clases particulares previas o practicar por tu cuenta primero.</dd>
+                    </div>
+                     <div class="faq-item">
+                        <dt>¿Tengo que saber bailar?</dt>
+                        <dd>¡Para nada! El Roller Dance es una fusión. Aprenderás los pasos y el ritmo sobre ruedas. Lo importante son las ganas de moverte y disfrutar.</dd>
+                    </div>
+                     <div class="faq-item">
+                        <dt>¿Qué ropa y protecciones debo llevar?</dt>
+                        <dd>Ropa cómoda que te permita moverte libremente. Las protecciones (muñequeras, rodilleras, coderas y casco) son muy recomendables, especialmente si estás empezando.</dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt>¿Cómo me apunto a las clases?</dt>
+                        <dd>Rellena el <a href="#contacto">formulario de contacto</a> indicando tu interés en las clases y tu nivel, ¡y te responderemos con los detalles!</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+               <!-- CALENDARIO -->
+        <section id="calendario" class="content-section section-accent">
+            <!-- Fondo de imagen ya aplicado con CSS a #calendario -->
+            <div class="container">
+                <h2>Calendario: Próximas Fechas y Eventos</h2>
+                <p class="section-intro">¡No te pierdas nuestras próximas actividades! Prepárate para rodar, aprender y conectar.</p>
+
+                <!-- EVENTO DESTACADO: RETIRO DE AGOSTO -->
+                <div class="evento-destacado-wrapper retiro-agosto">
+                    <h3 class="evento-titulo"><span>🌟</span> Retiro de Verano: Rollerdance & Yoga <span>🧘‍♀️</span></h3>
+                    <p class="evento-fecha-lugar"><strong>Fechas:</strong> 29 al 31 de Agosto | <strong>Lugar:</strong> Club Las Encinas de Boadilla, Madrid</p>
+                    
+                    <div class="evento-descripcion">
+                        <p>Sumérgete en un fin de semana único de rollerdance y yoga en un entorno natural privilegiado. Clases con Laura Rollerdancer y Marcela Hattemer, rollerparty, piscina, concierto ¡y mucho más! Desliza para ver todos los detalles:</p>
+                    </div>
+
+                    <!-- Carrusel para los carteles del Retiro -->
+                    <div class="swiper retiro-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="images/retirocartel.jpg" alt="Cartel Retiro Rollerdance y Yoga Agosto"></div>
+                            <div class="swiper-slide"><img src="images/retiroprograma.jpg" alt="Programa Retiro Rollerdance y Yoga"></div>
+                            <div class="swiper-slide"><img src="images/retiroprofes.jpg" alt="Profesores Retiro Rollerdance y Yoga"></div>
+                            <div class="swiper-slide"><img src="images/retirodonde.jpg" alt="Ubicación Retiro Rollerdance y Yoga"></div>
+                        </div>
+                        <div class="swiper-button-prev retiro-prev"></div>
+                        <div class="swiper-button-next retiro-next"></div>
+                        <div class="swiper-pagination retiro-pagination"></div>
+                    </div>
+                    <div class="evento-cta">
+                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSehtQ9EXvhN2BEf5u_MGYMNLe-1uFxYkepRFiHg623RDvFdrA/viewform" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">¡Quiero Saber Más e Inscribirme!</a>
+                    </div>
+                </div>
+
+                <!-- CLASES DE JUNIO -->
+                <div class="evento-destacado-wrapper clases-junio">
+                    <h3 class="evento-titulo"><span>🗓️</span> Clases Especiales de Junio <span>☀️</span></h3>
+                    <div class="clases-junio-contenido">
+                        <div class="clases-junio-cartel">
+                            <img src="images/clasesjunio.jpg" alt="Cartel Clases de Rollerdance Junio">
+                        </div>
+                        <div class="clases-junio-descripcion">
+                            <p>¡Terminamos el curso por todo lo alto! Únete a nuestras clases especiales de junio. Diferentes fechas y localizaciones para que no te pierdas ni una. Consulta el cartel para todos los detalles.</p>
+                            <div class="evento-cta">
+                                <a href="#contacto" class="btn btn-secondary">Consultar Horarios y Apuntarme</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Espacio para otros eventos o calendario general si es necesario -->
+                <!-- <div class="calendario-list" style="margin-top: 3rem;">
+                    <h4>Otras Fechas y Clases Regulares:</h4>
+                    <ul>
+                        <li>Domingo, [Fecha 1] - 10:15 a 11:45</li>
+                        <li><em>(Consulta regularmente o pregunta para más fechas)</em></li>
+                    </ul>
+                </div> -->
+
+            </div>
+        </section>
+        
+        <!-- CONTACTO -->
+<section id="contacto" class="content-section">
+    <div class="container">
+        <h2>¡Hablemos! / Ponte en Contacto</h2>
+
+        <!-- *** NUEVO: Contenedor para el párrafo introductorio dentro del cuadro *** -->
+        <div class="contact-intro-box">
+            <p>¿Tienes dudas sobre las clases? ¿Quieres saber más sobre los workshops? ¿Te interesa colaborar? ¡Escríbenos!</p>
+        </div>
+        <!-- *** FIN NUEVO CONTENEDOR *** -->
+
+        <form id="contact-form"> <!-- SIN action NI method -->
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="nombre" required> <!-- name="nombre" -->
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required> <!-- name="email" -->
+            </div>
+             <div class="form-group">
+                <label for="subject">Asunto:</label>
+                 <select id="subject" name="asunto"> <!-- name="asunto" -->
+                    <option value="Clases">Consulta sobre Clases</option>
+                    <option value="Workshops">Interés en Workshops</option>
+                    <option value="Shows">Consulta sobre Shows</option>
+                    <option value="Eventos">Información de Eventos</option>
+                    <option value="General">Consulta General</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="mensaje" rows="5" required></textarea> <!-- name="mensaje" -->
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        </form>
+        <div id="form-status" style="margin-top: 1rem; text-align: center;"></div> <!-- Para mensajes de estado -->
+
+        <!-- Este párrafo queda fuera del cuadro, pero dentro del container -->
+        <p class="contact-insta">También puedes encontrarnos en Instagram: <a href="https://instagram.com/laura_rollerdancer" target="_blank" rel="noopener noreferrer">@laura_rollerdancer</a></p>
+    </div>
+</section>
+    </main>
+
+    <footer>
+    <div class="container">
+        <p>© 2025 Make Me Roll - Laura Rollerdancer. Todos los derechos reservados.</p>
+        <div class="social-links">
+             <a href="https://instagram.com/laura_rollerdancer" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <!-- <i class="fab fa-instagram"></i> -->
+                <img src="images/instagramlogo.webp" alt="Instagram Make Me Roll" class="social-icon"> <!-- <<< LÍNEA MODIFICADA -->
+             </a>
+             <!-- Aquí podrías añadir más enlaces a otras redes sociales de forma similar -->
+             <!-- Ejemplo:
+             <a href="https://facebook.com/tu_pagina" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <img src="images/facebooklogo.webp" alt="Facebook Make Me Roll" class="social-icon">
+             </a>
+             -->
+        </div>
+    </div>
+</footer>
+    <!-- *** AÑADIDO: SCRIPT DE SWIPER (antes de tu script.js) *** -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> 
+
+    <!-- Tu script personalizado -->
+    <script src="script.js"></script> 
+    
+</body>
+</html>
