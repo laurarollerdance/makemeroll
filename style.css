@@ -1958,3 +1958,25 @@ footer p { /* MANTENIDO */
 
     /* ... el resto de reglas de tu media query ... */
 }
+@media (max-width: 768px) {
+    /* ... otras reglas que ya tengas ... */
+
+    /* --- Aumentar tamaño de texto en Workshops y Eventos para móvil --- */
+    #workshops-eventos p {
+        font-size: 1.1rem; /* <-- AJUSTA ESTE VALOR */
+                           /* Si tu html es 15px, 1.1rem será 16.5px */
+                           /* Si tu html es 14px, 1.1rem será 15.4px */
+                           /* Prueba con 1.05rem, 1.1rem, 1.15rem hasta que te guste */
+                           /* Asegúrate de que el color y text-shadow (si los tiene) sean adecuados */
+                           /* Si ya tienes una regla para #workshops-eventos p fuera del media query
+                              con color y text-shadow, esos se heredarán. Solo necesitas cambiar font-size aquí. */
+    }
+
+    /* Opcional: si también quieres que los H3 sean un poco más grandes en móvil en esta sección */
+    /* #workshops-eventos h3 {
+        font-size: 1.6rem; /* Ajusta según el tamaño actual de h3 en móvil y lo que desees */
+    /* } */
+
+
+    /* ... el resto de reglas de tu media query ... */
+}
